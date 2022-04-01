@@ -11,29 +11,19 @@ import Support from '../Support/Support'
 import Comments from '../Comments/Comments'
 import Review from '../Review/Review'
 
-import {useDispatch} from 'react-redux';
-import {HashRouter as Router, Route, Link, useHistory} from 'react-router-dom';
+import {HashRouter as Router, Route} from 'react-router-dom';
 
 function App() {
-  const dispatch = useDispatch();
-  const history = useHistory();
 
   useEffect(() => {
     //getRoute
   },[])
 
-  // const handleClick = (nextPage, type, payload) => {
-    
-  //   dispatch({type: type, payload: payload});
-
-  //   history.push(`/${nextPage}`);
-  // }
-
   return (
     <Router>
     <div className='App'>
       <Header />
-      {/* will need minimum 5 Routes: Feeling, Understanding,  (how well are you being) Supported, Comments, Submit */}
+     
       <Route path='/' exact>
         <Landing />
       </Route>

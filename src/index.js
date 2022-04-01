@@ -18,7 +18,7 @@ const reflection = {
 
 const reflectReducer = (state = reflection, action) => {
 
-
+return state;
 }
 
 const store = createStore(
