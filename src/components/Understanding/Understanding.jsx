@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import {useDispatch} from 'react-redux'
 import {useHistory} from 'react-router-dom'
+import {handleClick} from '../handleClick'
 
 function Understanding () {
 //This component should dispatch an integer between 1-10. 
@@ -9,10 +10,6 @@ const history = useHistory();
 
 const [inputVal, setInputVal] = useState(0);
 
-const handleClick = () => {
-    dispatch({type: 'ADD_UNDERSTANDING', payload: inputVal});
-    history.push('/support')
-} 
 
 // onClick={handleClick}
 
@@ -26,7 +23,7 @@ const handleClick = () => {
             name="understanding"
             value={inputVal} 
             min="0" max="10"></input>
-            <button onClick={handleClick}>NEXT</button>
+            <button onClick={(event) => handleClick('support', 'ADD_UNDERSTANDING', inputVal)}>NEXT</button>
         </div>
         
     </>)
