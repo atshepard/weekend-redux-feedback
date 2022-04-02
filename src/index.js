@@ -17,8 +17,33 @@ const reflection = {
 }
 
 const reflectReducer = (state = reflection, action) => {
+    switch (action.type) {
+        case 'ADD_FEELINGS':
+            return {
+                ...state,
+                feeling: Number(action.payload)
+            };
+        case 'ADD_UNDERSTANDING':
+            return {
+                ...state,
+                understanding: Number(action.payload)
+            };
 
-return state;
+        case 'ADD_SUPPORT':
+            return {
+                ...state,
+                support: Number(action.payload)
+            };
+
+        case 'ADD_COMMENTS':
+            return {
+                ...state,
+                comments: (action.payload)
+            };    
+            
+        default:
+            return state;
+    }
 }
 
 const store = createStore(

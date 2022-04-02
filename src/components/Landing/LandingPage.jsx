@@ -1,9 +1,9 @@
 import swal from 'sweetalert';
 import moment from 'moment';
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
-function LandingPage () {
-// shows current moment, asks if you would like to do a reflection. If yes, push to Feelings.
+function LandingPage() {
+    // shows current moment, asks if you would like to do a reflection. If yes, push to Feelings.
     const history = useHistory();
 
     const handleNo = () => {
@@ -12,25 +12,25 @@ function LandingPage () {
 
     const handleClick = (nextPage) => {
         history.push(`/${nextPage}`);
-}
+    }
 
     const time = moment().format("MMM Do YY")
-    
-    return(<>
 
-    <div>
+    return (<>
 
-    <h2>Welcome</h2>
+        <div>
 
-    <p>It is {time}.</p>
+            <h2>Welcome</h2>
 
-    <p>Would you like to reflect on today?</p>
+            <p>It is {time}.</p>
 
-    <button onClick={(event) => {handleClick('feeling')}}>YES</button>
-    <button onClick={handleNo}>NO</button>
+            <p>Would you like to reflect on today?</p>
 
-    </div>
-   
+            <button onClick={(event) => { handleClick('feeling') }}>YES</button>
+            <button onClick={handleNo}>NO</button>
+
+        </div>
+
     </>)
 }
 
