@@ -11,13 +11,29 @@ import Support from '../Support/Support'
 import Comments from '../Comments/Comments'
 import Review from '../Review/Review'
 
+import {useDispatch} from 'react-redux';
+import {useHistory} from 'react-router-dom';
+
 import {HashRouter as Router, Route} from 'react-router-dom';
 
 function App() {
+  const dispatch = useDispatch();
+
 
   useEffect(() => {
     //getRoute
   },[])
+
+// const handleClick = (nextPage, type, payload) => {
+
+//     if (type) {
+//         dispatch({type: type, payload: payload});
+//         history.push(`/${nextPage}`);
+//     } else {
+//         history.push(`/${nextPage}`);
+//     }
+
+// }
 
   return (
     <Router>
