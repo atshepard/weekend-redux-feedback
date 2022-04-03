@@ -1,10 +1,15 @@
 .App {
   text-align: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
   background-color: #ffddd3;
   animation-name: color;
   animation-duration: 12s;
   animation-iteration-count: infinite;
-  height: 100%;
 }
 
 @keyframes color {
