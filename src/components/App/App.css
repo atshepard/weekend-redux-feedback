@@ -1,12 +1,28 @@
 .App {
   text-align: center;
+  background-color: #ffddd3;
+  animation-name: color;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  height: 100%;
+}
+
+@keyframes color {
+  0% {
+    background-color: #ffddd3;
+  }
+  50% {
+    background-color: #f3bfb3;
+  }
+  100% {
+    background-color: #ffddd3;
+  }
 }
 
 .App-header {
-  background-color: #033076;
   min-height: 70px;
   padding: 20px;
-  color: white;
+  color: #fdf8e2;
   margin-bottom: 20px;
 }
 
