@@ -3,10 +3,11 @@
   height: 100%;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 body {
-  background-color: #ffddd3;
+  background-color: #ffbb93;
   animation-name: color;
   animation-duration: 12s;
   animation-iteration-count: infinite;
@@ -14,20 +15,20 @@ body {
 
 @keyframes color {
   0% {
-    background-color: #ffddd3;
+    background-color: #ffbb93;
   }
   50% {
-    background-color: #f3bfb3;
+    background-color: #ff8a65;
   }
   100% {
-    background-color: #ffddd3;
+    background-color: #ffbb93;
   }
 }
 
 .App-header {
   min-height: 70px;
   padding: 20px;
-  color: #fdf8e2;
+  color: #fdf8e9;
   margin-bottom: 20px;
 }
 
@@ -41,4 +42,18 @@ body {
 
 h4 {
   font-style: italic;
+}
+
+.container{
+  background-color: #fdf8e2;
+  color: #297a8a;
+  height: 50%;
+  width: 50%;
+  padding: 20px;
+  align-items: stretch;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: 5px 5px #c75b39;
 }

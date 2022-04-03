@@ -1,32 +1,35 @@
-import {useState} from 'react'
-import {useDispatch} from 'react-redux'
-import {useHistory} from 'react-router-dom'
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { Slider, Button } from '@mui/material';
 
-function Feelings () {
+function Feelings() {
 
-const [inputVal, setInputVal] = useState(0);
+    const [inputVal, setInputVal] = useState(0);
 
-const dispatch = useDispatch();
-const history = useHistory();
+    const dispatch = useDispatch();
+    const history = useHistory();
 
-const handleClick = () => {
-    dispatch({type: 'ADD_FEELINGS', payload: inputVal});
-    history.push('/understanding')
-} 
+    const handleClick = () => {
+        dispatch({ type: 'ADD_FEELINGS', payload: inputVal });
+        history.push('/understanding')
+    }
 
-    return(<>
-        <div>
-            <h2>Feelings Go Here:</h2>
-            <input 
-            onChange={(event) => setInputVal(event.target.value)}
-            type="range" 
-            id="feeling" 
-            name="feeling"
-            value={inputVal} 
-            min="0" max="10"></input>
-            <button onClick={handleClick}>NEXT</button>
+    return (<>
+        <div className="container">
+            <h2>Feelings</h2>
+            <h4>How are you feeling about today?</h4>
+            <br />
+            <Slider
+                onChange={(event) => setInputVal(event.target.value)}
+                value={inputVal}
+                valueLabelDisplay="on"
+                step={1}
+                marks
+                min={0} max={10}></Slider>
+            <Button onClick={handleClick}>NEXT</Button>
         </div>
-        
+
     </>)
 }
 
