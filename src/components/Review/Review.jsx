@@ -1,10 +1,11 @@
-import {useSelector} from 'react-redux';
-import {useState} from 'react'
-;import {useHistory} from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useState } from 'react'
+    ; import { useHistory } from 'react-router-dom';
+import { Button } from '@mui/material';
 import axios from 'axios';
 import swal from 'sweetalert';
 
-function Review () {
+function Review() {
     const history = useHistory();
 
     let reflection = useSelector(store => store.reflectReducer);
@@ -19,28 +20,28 @@ function Review () {
             icon: "warning",
             buttons: true,
             dangerMode: true,
-          })
-          .then((willSubmit) => {
-            if (willSubmit) {
-              swal("Your reflection has been saved", {
-                icon: "success",
-              });
+        })
+            .then((willSubmit) => {
+                if (willSubmit) {
+                    swal("Your reflection has been saved", {
+                        icon: "success",
+                    });
 
-              axios.post('/feedback', {reflection})
-                .then(response => {
-                    //getRoute would go here
-                    setSubmit(true);
-                })
-                .catch(error => {
-                    console.log('error in axios post:', error)
-                })
+                    axios.post('/feedback', { reflection })
+                        .then(response => {
+                            //getRoute would go here
+                            setSubmit(true);
+                        })
+                        .catch(error => {
+                            console.log('error in axios post:', error)
+                        })
 
-            } else {
-              swal("Come back when you're ready");
-            }
-          });
+                } else {
+                    swal("Come back when you're ready");
+                }
+            });
     }
-   
+
     const handleYes = () => {
         history.push('/')
     }
@@ -50,25 +51,27 @@ function Review () {
     }
 
     return (<>
-        <div>
-            {submitted ? 
-            <div>
-            <h3>Would you like to add another reflection?</h3>
-            <button onClick={handleYes}>YES</button>
-            <button onClick={handleNo}>NO</button>
-            </div>
-            :
-            <div>
-            <h3>Here is your reflection:</h3>
-            <p>Feeling: <span>{reflection.feeling}</span> out of 10</p>
-            <p>Understanding: <span>{reflection.understanding}</span> out of 10</p>
-            <p>Support: <span>{reflection.support}</span> out of 10</p>
-            <p>Comments: <span>{reflection.comments}</span></p>
-            <button onClick={handleSubmit}>Submit</button>
-            </div>
-            }   
+        <div className="container">
+            <form>
+                {submitted ?
+                    <div>
+                        <h3>Would you like to add another reflection?</h3>
+                        <Button onClick={handleYes}>YES</Button>
+                        <Button onClick={handleNo}>NO</Button>
+                    </div>
+                    :
+                    <div>
+                        <h3>Here is your reflection:</h3>
+                        <p>Feeling: <span>{reflection.feeling}</span> out of 10</p>
+                        <p>Understanding: <span>{reflection.understanding}</span> out of 10</p>
+                        <p>Support: <span>{reflection.support}</span> out of 10</p>
+                        <p>Comments: <span>{reflection.comments}</span></p>
+                        <Button onClick={handleSubmit}>Submit</Button>
+                    </div>
+                }
+            </form>
         </div>
-    
+
     </>)
 }
 

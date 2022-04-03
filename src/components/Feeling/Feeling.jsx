@@ -16,6 +16,7 @@ function Feelings() {
     }
 
     return (<>
+    <form>
         <div className="container">
             <h2>Feelings</h2>
             <h4>How are you feeling about today?</h4>
@@ -26,10 +27,11 @@ function Feelings() {
                 valueLabelDisplay="on"
                 step={1}
                 marks
-                min={0} max={10}></Slider>
+                min={0} max={10}
+                required></Slider>
             <Button onClick={handleClick}>NEXT</Button>
         </div>
-
+    </form>
     </>)
 }
 

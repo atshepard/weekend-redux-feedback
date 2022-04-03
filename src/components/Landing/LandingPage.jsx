@@ -17,7 +17,7 @@ function LandingPage() {
         history.push(`/${nextPage}`);
     }
 
-    const time = moment().format('MMMM Do YYYY, h:mm:ss a');
+    const time = moment().format('MMMM Do YYYY');
 
     return (<>
 
@@ -25,7 +25,7 @@ function LandingPage() {
 
             <h2>Welcome</h2>
 
-            <h4>It is {time}.</h4>
+            <h4>It is {time}</h4>
 
             <p>Would you like to reflect on today?</p>
 
