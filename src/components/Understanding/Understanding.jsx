@@ -10,7 +10,7 @@ const history = useHistory();
 const [inputVal, setInputVal] = useState(0);
 
 const handleClick = () => {
-    dispatch({type: 'ADD_FEELINGS', payload: inputVal});
+    dispatch({type: 'ADD_UNDERSTANDING', payload: inputVal});
     history.push('/support')
 } 
 

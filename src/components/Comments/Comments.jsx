@@ -7,7 +7,7 @@ function Comments () {
 const dispatch = useDispatch();
 const history = useHistory();
 
-const [inputVal, setInputVal] = useState(0);
+const [inputVal, setInputVal] = useState('');
 
 const handleClick = () => {
     dispatch({type: 'ADD_COMMENTS', payload: inputVal});

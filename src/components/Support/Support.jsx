@@ -16,7 +16,7 @@ const handleClick = () => {
 
     return(<>
         <div>
-            <h2>Feelings Go Here:</h2>
+            <h2>Support Goes Here:</h2>
             <input 
             onChange={(event) => setInputVal(event.target.value)}
             type="range" 
