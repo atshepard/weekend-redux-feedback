@@ -16,7 +16,6 @@ function Comments() {
     }
 
     return (<>
-        <form>
             <div className="container">
                 <h2>Comments</h2>
                 <h4>Are there any comments you would like to share?</h4>
@@ -28,7 +27,6 @@ function Comments() {
                     value={inputVal} required ></TextField>
                 <Button onClick={handleClick}>NEXT</Button>
             </div>
-        </form>
     </>)
 }
 
