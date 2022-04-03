@@ -1,17 +1,18 @@
 import {useState} from 'react'
-import {handleClick} from '../handleClick'
+import {useDispatch} from 'react-redux'
+import {useHistory} from 'react-router-dom'
 
 function Feelings () {
-//This component should dispatch an integer between 1-10. 
 
 const [inputVal, setInputVal] = useState(0);
 
-// const handleClick = () => {
-//     dispatch({type: 'ADD_FEELINGS', payload: inputVal});
-//     history.push('/understanding')
-// } 
+const dispatch = useDispatch();
+const history = useHistory();
 
-// onClick={handleClick}
+const handleClick = () => {
+    dispatch({type: 'ADD_FEELINGS', payload: inputVal});
+    history.push('/understanding')
+} 
 
     return(<>
         <div>
@@ -23,7 +24,7 @@ const [inputVal, setInputVal] = useState(0);
             name="feeling"
             value={inputVal} 
             min="0" max="10"></input>
-            <button onClick={(event) => handleClick('understanding', 'ADD_FEELINGS', inputVal)}>NEXT</button>
+            <button onClick={handleClick}>NEXT</button>
         </div>
         
     </>)

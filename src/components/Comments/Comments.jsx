@@ -16,7 +16,7 @@ const handleClick = () => {
 
     return(<>
         <div>
-            <h2>Feelings Go Here:</h2>
+            <h2>Comments Go Here:</h2>
             <input 
             onChange={(event) => setInputVal(event.target.value)}
             type="text" 
@@ -26,7 +26,6 @@ const handleClick = () => {
             value={inputVal} ></input>
             <button onClick={handleClick}>NEXT</button>
         </div>
-        
     </>)
 }
 

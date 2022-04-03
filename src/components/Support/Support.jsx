@@ -1,6 +1,6 @@
-import {useState} from 'react'
-import {useDispatch} from 'react-redux'
-import {useHistory} from 'react-router-dom'
+import {useState} from 'react';
+import {useDispatch} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 
 function Support () {
 //This component should dispatch an integer between 1-10. 
@@ -13,8 +13,6 @@ const handleClick = () => {
     dispatch({type: 'ADD_SUPPORT', payload: inputVal});
     history.push('/comments')
 } 
-
-// onClick={handleClick}
 
     return(<>
         <div>
