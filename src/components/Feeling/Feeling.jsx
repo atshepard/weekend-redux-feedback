@@ -8,6 +8,7 @@ function Feelings() {
 
     const [inputVal, setInputVal] = useState(null);
    
+    const dispatch = useDispatch()''
     const history = useHistory();
 
     const handleClick = () => {
