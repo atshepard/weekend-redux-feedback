@@ -11,7 +11,7 @@ function Understanding() {
     const [inputVal, setInputVal] = useState(0);
 
     const handleClick = () => {
-        if (inputVal == null) {
+        if (inputVal == 0) {
             swal({
                 title: "Are you sure?",
                 text: "Your current selection is 0.",
