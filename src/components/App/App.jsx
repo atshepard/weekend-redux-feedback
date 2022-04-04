@@ -1,5 +1,5 @@
 import React from 'react';
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
@@ -11,62 +11,74 @@ import Support from '../Support/Support'
 import Comments from '../Comments/Comments'
 import Review from '../Review/Review'
 
-import {useDispatch} from 'react-redux';
-import {useHistory} from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 
-import {HashRouter as Router, Route} from 'react-router-dom';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function App() {
-  const dispatch = useDispatch();
 
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#297a8a',
+      },
+      secondary: {
+        main: '#9acde0',
+      },
+      info: {
+        main: '#fdf8e2',
+      },
+    },
+  });
 
   useEffect(() => {
     //getRoute
-  },[])
+  }, [])
 
-// const handleClick = (nextPage, type, payload) => {
+  // const handleClick = (nextPage, type, payload) => {
 
-//     if (type) {
-//         dispatch({type: type, payload: payload});
-//         history.push(`/${nextPage}`);
-//     } else {
-//         history.push(`/${nextPage}`);
-//     }
+  //     if (type) {
+  //         dispatch({type: type, payload: payload});
+  //         history.push(`/${nextPage}`);
+  //     } else {
+  //         history.push(`/${nextPage}`);
+  //     }
 
-// }
+  // }
 
   return (
-    <Router>
-    <div className='App'>
-      <Header />
-     
-      <Route path='/' exact>
-        <Landing />
-      </Route>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <div className='App'>
+          <Header />
 
-      <Route path='/feeling'>
-        <Feeling />
-      </Route>
+          <Route path='/' exact>
+            <Landing />
+          </Route>
 
-      <Route path='/understanding'>
-        <Understanding />
-      </Route>
+          <Route path='/feeling'>
+            <Feeling />
+          </Route>
 
-      <Route path ='/support'>
-        <Support />
-      </Route>
+          <Route path='/understanding'>
+            <Understanding />
+          </Route>
 
-      <Route path='/comments'>
-        <Comments />
-      </Route>
+          <Route path='/support'>
+            <Support />
+          </Route>
 
-      <Route path='/review'>
-        <Review />
-      </Route>
+          <Route path='/comments'>
+            <Comments />
+          </Route>
 
-      {/* /admin gets all reflections from database sorted by date */}
-    </div>
-    </Router>
+          <Route path='/review'>
+            <Review />
+          </Route>
+
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 
