@@ -11,8 +11,29 @@ function Support() {
     const [inputVal, setInputVal] = useState(0);
 
     const handleClick = () => {
-        dispatch({ type: 'ADD_SUPPORT', payload: inputVal });
-        history.push('/comments')
+        if (inputVal == null) {
+            swal({
+                title: "Are you sure?",
+                text: "Your current selection is 0.",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((okieDokie) => {
+                    if (okieDokie) {
+                        swal("We'll move on to the next question, then!", {
+                            icon: "success"
+                        });
+                        dispatch({ type: 'ADD_SUPPORT', payload: inputVal });
+                        history.push('/comments');
+                    } else {
+                        swal("Please adjust your entry!");
+                    }
+                });
+        } else {
+            dispatch({ type: 'ADD_SUPPORT', payload: inputVal });
+            history.push('/comments');
+        }
     }
 
     return (<>

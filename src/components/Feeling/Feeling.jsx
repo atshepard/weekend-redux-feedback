@@ -2,14 +2,12 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Slider, Button } from '@mui/material';
-import swal from 'sweetalert'
+import swal from 'sweetalert';
 
 function Feelings() {
 
     const [inputVal, setInputVal] = useState(null);
-    const reflection = useSelector(store => store.reflectReducer)
-
-    const dispatch = useDispatch();
+   
     const history = useHistory();
 
     const handleClick = () => {

@@ -11,9 +11,30 @@ function Understanding() {
     const [inputVal, setInputVal] = useState(0);
 
     const handleClick = () => {
-        dispatch({ type: 'ADD_UNDERSTANDING', payload: inputVal });
-        history.push('/support')
-    }
+        if (inputVal == null) {
+            swal({
+                title: "Are you sure?",
+                text: "Your current selection is 0.",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((okieDokie) => {
+                    if (okieDokie) {
+                        swal("We'll move on to the next question, then!", {
+                            icon: "success"
+                        });
+                        dispatch({ type: 'ADD_UNDERSTANDING', payload: inputVal });
+                        history.push('/support');
+                    } else {
+                        swal("Please adjust your entry!");
+                    }
+                });
+        } else {
+            dispatch({ type: 'ADD_UNDERSTANDING', payload: inputVal });
+            history.push('/support');
+        }
+     }
 
     return (<>
         <div className="container">
