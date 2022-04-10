@@ -2,11 +2,18 @@
 
 This feedback form is designed to create a space for daily self-reflection. 
 
+ ![](/public/images/reflectionapp.png)
+
+ You may notice a subtle color transformation in the background: this was a design choice to emulate a 15 second breathing pattern I often use while reflecting. 
+
 ## Description
 
-There were quite a few hurdles to getting this app running the way I envisioned: 
+#### Material UI
+This app relies on Material UI, in addition to CSS, for aesthetics. This was my first time using a theme and styled components like sliders. I was generally pleased with how seamlessly they integrated into my vision:
 
-- I tried to refactor the handleClick function multiple ways, but just couldn't get it to work as a separate component. We haven't done that yet, and I just couldn't quite get there on my own. I did have an iteration of the app where I passed it on props, but that was as inelegant as the current solution, in my opinion.
+![](/public/images/muiSlider.png)
 
+#### Redux
+This app relies heavily on redux, which stores the response from each page in its state, then dispatches that state via axios when the reflection is submitted. Redux has been a lifesaver as an intermediary between the client and server as an alternative to passing information on props in order to access information in a particular component.
 
-- I also would have liked to refactor the feelings, understanding and support pages to be the same component because they behave so similarly. We haven't discussed in-depth the process of generic componentizing, and unfortunately I did not have the capacity during this sprint to do the research for it. 
+![](/public/images/redux.png)

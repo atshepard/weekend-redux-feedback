@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
-import { useState } from 'react'
-    ; import { useHistory } from 'react-router-dom';
+import { useState } from 'react'; 
+import { useHistory } from 'react-router-dom';
 import { Button } from '@mui/material';
 import axios from 'axios';
 import swal from 'sweetalert';
